@@ -158,10 +158,28 @@ p.draw-prize.thousands {
     align-self: center;
 }
 
-.advance-play {
+.specialDraw {
     /* display: none; */
     padding: 0.5rem;
+    background-color: #4D9945;
+    filter: var(--shadow-filter-text);
+}
+.specialDraw-text p:first-child {
+    font-weight: 700;
+}
+
+.specialDraw-text::before {
+    content: url(http://www.lottery.ie/content/dam/pli/test-assets/pick%26play-htmltest/AP-1.svg);
+    transform: scale(0.8);
+    float: left;
+    margin-right: 0.5rem;
+}
+
+.specialDraw.advance {
     background-color: rgba(0,0,0,.2);
+}
+.specialDraw.advance .specialDraw-text::before {
+    content: url(http://www.lottery.ie/content/dam/pli/test-assets/pick%26play-htmltest/AP-2.svg);
 }
 
 /* BASE GAME CARDS */
