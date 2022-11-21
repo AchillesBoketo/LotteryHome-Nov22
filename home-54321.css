@@ -1,0 +1,435 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+/* VARIABLES */
+:root {
+    /* shadows */
+    --shadow-filter-text: drop-shadow(0px 1px 0.5px rgba(0, 0, 0, 0.4));
+    --shadow-box-none: 0 0 0 rgba(0,0,0,0);
+    --shadow-box-card: 0 2px 6px rgba(0,0,0,0.20), 0 1px 2px rgba(0,0,0,0.40);
+    --shadow-box-card-hov: 0 0.75rem 0.5rem 0.125rem rgba(0,0,0,0.22), 0 0.5rem 0.25rem rgba(0,0,0,0.18);
+    --shadow-box-transition: box-shadow 0.2s cubic-bezier(.25,.8,.25,1);
+    --shadow-box-button: 0 3px 2px rgba(0,0,0,0.2), 0 1px 1px rgba(0,0,0,0.3);  
+    --shadow-box-button-hov: 0 6px 4px rgba(0,0,0,0.3), 0 3px 2px rgba(0,0,0,0.2);      
+    /* colors */
+    --col-blue-dark: #2D4550;
+    ;
+}
+
+html {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+p {
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+/* use to toggle visibility for testing */
+.qa-hide {
+    display: none;
+}
+
+.content-wrap {
+    width: 100%;
+    padding: 0px;
+}
+
+.constrain {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem;
+}
+
+.dbg-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+
+
+
+/* DRAW INFO TYPOGRAPHY */
+.dbg-game-base p {
+    font-size: 0.75rem;
+    line-height: 1;
+    margin: 0px;
+}
+
+.draw-info {
+    color: #FFFFFF;
+    font-size: 0.75rem; 
+    font-weight: 700;
+}
+
+p.draw-countdown-1 {
+
+}
+p.draw-countdown-2 {
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+p.draw-prize {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: 900;
+    /* background-color: darkseagreen; */
+    align-self: center;
+}
+p.draw-prize.thousands {
+    font-size: 1.5rem;
+}
+.draw-prize.millions strong {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+
+/* HERO GAME CARDS */
+
+.dbg-hero-wrap {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    color: #FFFFFF;
+    display: grid;
+    grid-template-rows: 25vh auto;
+    padding: 0px;
+    box-shadow: var(--shadow-box-card);
+}
+.dbg-hero-wrap:hover {
+    box-shadow: var(--shadow-box-card-hov);
+    transition: var(--shadow-box-transition);
+}
+.dbg-hero-wrap:hover .button {
+    background: #ffffff;
+    color: black;
+}
+
+.main-content .dbg-game-card {
+    padding-top: 0px;
+    box-shadow: var(--shadow-box-none);
+}
+
+.dbg-hero-wrap .backImg-wrap {
+    /* position: absolute; */
+    grid-row: 1;
+    top: 0;
+    width: 100%;
+    /* height: 100%; */
+    z-index: -1;
+    background-image: url(https://www.lottery.ie/content/dam/pli/banners/euromillions/12-draws-of-christmas-special-draw-card-web.jpg);
+    background-size: cover;
+    background-position: right top;
+}
+.dbg-hero-wrap .main-content {   
+    position: relative;
+    grid-row: 2;
+    width: 100%;
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+.dbg-hero-back {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: -4.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.dbg-hero-back img {
+    width: auto;
+    height: auto;
+    align-self: center;
+}
+
+.advance-play {
+    /* display: none; */
+    padding: 0.5rem;
+    background-color: rgba(0,0,0,.2);
+}
+
+/* BASE GAME CARDS */
+
+.dbg-others-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.dbg-game-card {
+    position: relative;
+    display: grid;
+    height: 6rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.75fr 1fr;
+    padding: 0.5rem 0.75rem 0.75rem 0.75rem ;
+    border-radius: 0.5rem;
+    overflow: hidden;    
+    box-shadow: var(--shadow-box-card);
+    transition: var(--shadow-box-transition);
+    text-decoration: none;    
+}
+
+.dbg-game-card:hover {
+    box-shadow: var(--shadow-box-card-hov);
+}
+
+.dbg-game-card p {
+    margin: 0;
+    filter: var(--shadow-filter-text);
+}
+
+.dbg-game-card p.draw-prize {
+    margin-top: 0.25rem;
+}
+
+.dbg-game-card .dbg-logo-wrap {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    filter: var(--shadow-filter-text);
+}
+
+.dbg-game-card .dbg-logo-wrap svg {
+    height: 3rem;
+    width: auto;
+}
+
+.dbg-game-card .draw-info {
+    grid-column: 2;
+    grid-row: 1/span2;
+    align-self: center;
+    /* background-color: green; */
+    
+}
+.dbg-game-card .CTA-wrap {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start;
+    align-self: end;
+}
+
+.dbg-game-card:hover .button {
+    background: #ffffff;
+    color: var(--col-blue-dark);
+}
+
+.dbg-game-card .guarantee {
+    color: #ffffff;
+    font-weight: 700;    
+    font-size: 0.65rem;
+    line-height: 1;
+    position: absolute;
+    margin: 0;
+    bottom: 0.75rem;
+    right: 0.75rem;
+}
+
+
+/* buttons */
+.button {
+    /* buttonText */
+    box-sizing: border-box;
+    border: 1.5px solid #FFFFFF;
+    border-radius: 1.5rem;
+    background: rgba(0, 0, 0, 0.15); 
+    padding: 1rem 2rem;
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: 1;
+    flex-basis: 15rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.25px;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    color: #ffffff;
+    box-shadow: var(--shadow-box-button);  
+    transition: color  0.2s ease-out, background 0.2s ease-out, box-shadow 0.2s ease-out;  
+}
+
+.button:hover {
+    box-shadow: var(--shadow-box-button-hov);
+}
+
+.button.small {
+    padding: 0.5rem 0.75rem;
+}
+
+
+/* brand backgrounds */
+.back-lotto {
+    background-image: url(https://www.lottery.ie/mkd/images/DbgCardBackground/Lotto-back.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.back-dailyMillion {
+    background-image: url(https://www.lottery.ie/mkd/images/DbgCardBackground/DailyMillion-back.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+/* backgrounds for mockup */
+.des-back-grey {
+    background-color: grey;
+}
+.des-back-green {
+    background-color: green;
+}
+.des-back-yelgreen {
+    background-color: yellowgreen;
+}
+
+/* tablet */
+@media screen and (min-width: 570px) {
+    html {
+        font-size: 18px;
+    }
+    .constrain {
+        padding: 1.5rem;
+    }
+    .dbg-game-card {
+        height: 5rem;
+    }
+
+    .dbg-game-card {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        height: auto;
+        text-decoration: none;
+    }
+
+    .dbg-game-card .dbg-logo-wrap {
+        grid-column: 1;
+        grid-row: 1;
+        align-self: center;
+    }
+    .dbg-game-card .draw-info {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: center;     
+    }
+    .dbg-game-card .CTA-wrap {
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: end;
+        align-self: center;
+    }
+
+    p.draw-prize {
+        font-size: 1.5rem;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1200px) {
+    .constrain {
+        width: 72rem;
+        margin: 0 auto;
+    }    
+    .dbg-container {
+        flex-direction: row;
+        width: 100%;
+        align-items: stretch;
+        height: 30rem        
+    }
+    .dbg-container > div {
+        flex-basis: 50%;
+        flex-grow: 1;
+    }
+
+    .dbg-others-wrap {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        gap: 1rem;
+        align-items: stretch;
+    }
+    .dbg-row-1 {
+        grid-row: 1;
+    }
+    .dbg-row-2 {
+        grid-row: 2;
+    }
+    .dbg-colspan-2 {
+        grid-column: 1 / span 2;
+    }
+    .dbg-col-1 {
+        grid-column: 1;
+        column-span: 1;
+    }
+    .dbg-col-2 {
+        grid-column: 2;
+        column-span: 1;
+    }
+
+    .dbg-game-card {
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr 0.75fr;
+        height: auto;    
+        justify-self: stretch;
+    }
+    .dbg-game-card .dbg-logo-wrap{
+        grid-row: 1;
+        grid-column: 1;
+    }
+    .dbg-game-card .draw-info {
+        grid-row: 2;
+        grid-column: 1;
+    }
+    .dbg-game-card .CTA-wrap {
+        grid-row: 3;
+        grid-column: 1;
+        justify-self: start;
+        align-self: end;
+    }
+
+    .dbg-hero-wrap {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    .dbg-hero-wrap .backImg-wrap{
+        flex-grow: 1;
+    }
+    .dbg-hero-wrap .main-content{
+        flex-grow: 0;
+    }
+
+    .dbg-hero-wrap .draw-info {
+        /* display: grid;
+        grid-template-columns: 1fr 2fr; */
+    }
+
+    .dbg-hero-wrap .dbg-game-card {
+        grid-template-rows: 0.5fr 1fr 0.5fr;
+    }
+    .dbg-hero-back {
+        top: -4rem;
+    }
+    .dbg-hero-wrap .draw-prize.millions {
+        font-size: 2rem;
+    }
+    .dbg-hero-wrap .draw-prize.millions strong{
+        font-size: 3rem;
+    }
+}

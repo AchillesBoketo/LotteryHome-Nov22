@@ -1,0 +1,24 @@
+Implmement Figma design here:
+https://www.figma.com/file/sZe0r0aXZDGnZMDBdxIFLe/18.10-Lotto-54321-WIP?node-id=753%3A297183&t=azCRHaa8h27D8n03-4
+
+To Do:
+- Fix spacing on desktop hero card content DONE
+- Finalise special draw states 
+
+DONE:
+- Change how hero image is implemented
+    Maybe:
+    wrap all in grid
+    image is top part of grid with z-index -1
+    image size is handled by grid
+    grid size rest of card
+- Implement new logic for adding/removing advance play component
+    - Advance play
+    - Special Draw
+    - Responsiveness:
+        - Mobile table should expand to accomodate adv play panel
+        - Desktop should maintain height
+- Implement new hero background graphic (add to AEM) 
+- Add Fourth Game (54321) DONE
+- Create classes for desktop column switching DONE
+    - Maybe explicit classes to handle positioning DONE
