@@ -31,7 +31,7 @@ body {
 }
 
 p {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     margin: 0;
 }
 
@@ -57,7 +57,16 @@ p {
     gap: 1rem;
 }
 
-
+/* TEXT CLASSES */
+.text-bold {
+    font-weight: 700;
+}
+.text-sm {
+    font-size: 0.75rem;
+}
+.text-allCaps {
+    text-transform: uppercase;
+}
 
 
 
@@ -158,10 +167,20 @@ p.draw-prize.thousands {
     align-self: center;
 }
 
-.advance-play {
+.special-draw {
     /* display: none; */
-    padding: 0.5rem;
-    background-color: rgba(0,0,0,.2);
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem ;
+    background: linear-gradient(129.69deg, #5BBF03 -38.42%, #4D9945 65.74%);
+}
+
+.tooltip svg {
+
+}
+
+.special-draw.advance {
+    background: rgba(0,0,0,.2);    
 }
 
 /* BASE GAME CARDS */
