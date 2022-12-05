@@ -70,7 +70,7 @@
                                         <rect x="8.60938" y="3.88892" width="2.77778" height="2.77778" rx="1.38889" fill="white"/>
                                         </svg>
                                     <div class="special-draw-text shadow-text">
-                                        <p class="text-sm text-allCaps text-bold">special draw</p>
+                                        <p id="specialDraw-before" class="text-sm text-allCaps text-bold">special draw</p>
                                         <p class="text-bold">Ireland only Raffle and stuff</p>
                                         <p>10 Raffle Prizes of 1 million, guaranteed!</p>
                                     </div>    
@@ -192,7 +192,8 @@
                 <p>Press buttons below to toggle special draw states:</p>
                 <div class="test_button_wrap">
                     <button onclick="normalDraw()" id="button_normal">toggle special draw</button>
-                    <button onclick="advancePlay()" id="button_advance">toggle Advance play</button>
+                    <button onclick="advancePlay()" id="button_advance">set Advance play</button>
+                    <button onclick="specialDraw()" id="button_advance">set Special Draw</button>                    
                 </div>
             </div>
         </div>
