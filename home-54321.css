@@ -36,7 +36,7 @@ p {
 }
 
 /* use to toggle visibility for testing */
-.qa-hide {
+div.qa-hide {
     display: none;
 }
 
@@ -55,6 +55,7 @@ p {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 /* TEXT CLASSES */
